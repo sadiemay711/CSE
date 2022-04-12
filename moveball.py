@@ -18,16 +18,16 @@ while running:
         if event.type == pygame.QUIT:
             running = False 
         if event.type == pygame.KEYDOWN: 
-            if event.key == K_ESCAPE:
+            if event.key == pygame.K_ESCAPE:
                 running = False 
-            if event.key ==  K_LEFT:
-                y = y -5
-            if event.key ==  K_RIGHT:
-                y = y +5
-            if event.key ==  K_UP:
-                x = x +5
-            if event.key ==  K_DOWN:
+            if event.key ==  pygame.K_LEFT:
                 x = x -5
+            if event.key ==  pygame.K_RIGHT:
+                x = x +5
+            if event.key ==  pygame.K_UP:
+                y = y -5
+            if event.key ==  pygame.K_DOWN:
+                y = y +5
 
     screen.fill((245, 245, 245))
 
