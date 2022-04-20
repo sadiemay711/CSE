@@ -1,16 +1,21 @@
 import pygame
 
+from objects import Player 
+from objects import player 
+from objects import player 
+from objects import get_pos 
+from objects import screen
+from objects import displaysize
 
-from objects import player
-from objects import rot  
+def rotateplayer(angle):
+    rotate_image = pygame.transform.rotate(player.surf, angle)
+    rect = rotate_image.get_rect()
+    pos = 100,100
+    return(rotate_image,pos)
+
 
 pygame.init()
-
-
-displaysize = 800
-
-screen = pygame.display.set_mode([displaysize,displaysize])
-
+pos = get_pos
 
 player_x = displaysize/2
 player_y = displaysize/2
@@ -24,21 +29,9 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
-            if event.key ==  pygame.K_LEFT:
-                player_x = player_x -5
-            if event.key ==  pygame.K_RIGHT:
-                player_x = player_x +5
-            if event.key ==  pygame.K_UP:
-               player_y=player_y-5
-            if event.key ==  pygame.K_DOWN:
-               player_y=player_y+5
-
+    player.update()
     screen.fill((0, 0, 0))
-
-    player.rot()
-
-    screen.blit(player.surf, (player_x,player_y))
-
+    screen.blit(player.surf, player.rect)
     pygame.display.flip()
 
 pygame.quit()
