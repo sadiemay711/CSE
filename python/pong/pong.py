@@ -86,7 +86,7 @@ while carryOn:
     screen.fill(BLACK)
     pygame.draw.line(screen, WHITE, [349,0], [349, 500], 5)
     all_sprites_list.draw(screen)
-
+    print(pygame.sprite.collide_rect(ball,wallA)) 
 
     font = pygame.font.Font(None,74)
     text = font.render(str(scoreA), 1, WHITE)
