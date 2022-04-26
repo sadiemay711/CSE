@@ -20,4 +20,3 @@ class Button(pygame.sprite.Sprite):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if self.rect.collidepoint(event.pos):
                     self.clicked = not self.clicked
-      #  return(self.clicked)

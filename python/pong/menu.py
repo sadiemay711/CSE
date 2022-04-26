@@ -35,7 +35,7 @@ while run:
     for event in event_list:
         if event.type == pygame.QUIT:
             run = False 
-    all_sprites_list.draw(screen)
     buttonA.update(event_list)
+    all_sprites_list.draw(screen)
     pygame.display.update()
     print(buttonA.clicked) 
